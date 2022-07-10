@@ -5,13 +5,13 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && ng serve",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && ng build",
-    "deploy": "SET NODE_OPTIONS=--openssl-legacy-provider && sh \"bin/deploy.sh\" && \"bin/deploy.sh\" ",
-    "test": "SET NODE_OPTIONS=--openssl-legacy-provider && ng test --watch=false",
-    "lint": "SET NODE_OPTIONS=--openssl-legacy-provider && ng lint",
-    "e2e": "npm run build && SET NODE_OPTIONS=--openssl-legacy-provider && ng e2e",
-    "e2e2": "SET NODE_OPTIONS=--openssl-legacy-provider && protractor e2e/protractor.conf.js"
+    "start": "ng serve",
+    "build": "ng build",
+    "deploy": "sh \"bin/deploy.sh\" && \"bin/deploy.sh\" ",
+    "test": "ng test --watch=false",
+    "lint": "ng lint",
+    "e2e": "npm run build && ng e2e",
+    "e2e2": "protractor e2e/protractor.conf.js"
   },
   "private": true,
   "dependencies": {
