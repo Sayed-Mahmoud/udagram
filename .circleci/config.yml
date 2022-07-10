@@ -25,6 +25,19 @@ jobs:
           name: Build Back-End
           command: |
             npm run backend:build
+  deploy:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - run:
+          name: Front-End deploy
+          command: |
+            npm run frontend:deploy
+      - run:
+          name: Back-End deploy
+          command: |
+            npm run backend:deploy
 workflows:
   udagram:
     jobs:
