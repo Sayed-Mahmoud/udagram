@@ -11,12 +11,10 @@
     "tsc": "npx tsc",
     "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
-    "clean": "rmdir www /s /q",
-    "deploy": "eb list && eb use udagram-api-dev && eb deploy",
-    "build": "tsc && copy /y .elasticbeanstalk www\\.elasticbeanstalk && copy /y src\\config\\* www\\config && copy /y .npmrc www\\.npmrc && copy /y package.json www\\package.json && cd www && 7z a -tzip Archive.zip . && cd ..",
-    "test2": "",
-    "test3": "tsc",
-    "test": "ng test --watch=false"
+    "clean": "rm -rf www/ || true",
+    "deploy": "npm run build && eb list && eb use udagram-api-dev && eb deploy",
+    "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",
