@@ -12,9 +12,9 @@
     "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rmdir www /s /q",
-    "deploy": "npm run build && eb list && eb use udagram-api-dev && eb deploy",
-    "build": "npm install . && tsc && copy /y src\\config\\* www\\config && copy /y .npmrc www\\.npmrc && copy /y package.json www\\package.json && cd www && 7z a -tzip Archive.zip . && cd ..",
-    "test2": " copy /y .elasticbeanstalk www\\.elasticbeanstalk &&",
+    "deploy": "eb list && eb use udagram-api-dev && eb deploy",
+    "build": "tsc && copy /y .elasticbeanstalk www\\.elasticbeanstalk && copy /y src\\config\\* www\\config && copy /y .npmrc www\\.npmrc && copy /y package.json www\\package.json && cd www && 7z a -tzip Archive.zip . && cd ..",
+    "test2": "",
     "test3": "tsc",
     "test": "ng test --watch=false"
   },

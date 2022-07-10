@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "SET NODE_OPTIONS=--openssl-legacy-provider && ng serve",
     "build": "SET NODE_OPTIONS=--openssl-legacy-provider && ng build",
-    "deploy": "SET NODE_OPTIONS=--openssl-legacy-provider && npm install -f && npm run build && chmod +x bin/deploy.sh && bin/deploy.sh",
+    "deploy": "SET NODE_OPTIONS=--openssl-legacy-provider && eb init && eb deploy ",
     "test": "SET NODE_OPTIONS=--openssl-legacy-provider && ng test --watch=false",
     "lint": "SET NODE_OPTIONS=--openssl-legacy-provider && ng lint",
     "e2e": "npm run build && SET NODE_OPTIONS=--openssl-legacy-provider && ng e2e",
