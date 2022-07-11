@@ -12,9 +12,13 @@
     "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "deploy": "npm run build && eb list && eb use udagram-api-dev && eb deploy",
+    "deploy": "npm run build && eb init udagram-api --region us-east-1 --platform node.js && eb use udagram-api && eb deploy udagram-api",
+    "deploy2": "set AWS_ACCESS_KEY_ID=AKIAQCC6UJT73IL4ZRAB&& set AWS_SECRET_ACCESS_KEY=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&&eb init udagram-api --region us-east-1 --platform node.js && eb use udagram-api && eb deploy udagram-api",
     "build": "npm install . && npm run clean && npm run tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build2": "copy /y .elasticbeanstalk\\* www\\ && copy /y src\\config\\* www\\config && copy /y .npmrc www\\.npmrc && copy /y package.json www\\package.json && cd www && 7z a -tzip Archive.zip . && cd ..",
+    "build3": "set AWS_ACCESS_KEY_ID=AKIAQCC6UJT73IL4ZRAB&& set AWS_SECRET_ACCESS_KEY=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&& eb init && eb list && eb use udagram-api && eb deploy",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test2": " && cp -R .elasticbeanstalk www/.elasticbeanstalk"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",
