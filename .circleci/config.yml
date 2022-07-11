@@ -9,6 +9,7 @@ jobs:
     steps:
       - node/install
       - checkout
+      - aws-cli/setup
       - run:
           name: Install Front-End Dependencies
           command: |
@@ -30,6 +31,8 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
+      - checkout
+      - aws-cli/setup
       - run:
           name: Front-End deploy
           command: |
