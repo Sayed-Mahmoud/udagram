@@ -14,7 +14,7 @@
     "clean": "rm -rf www/ || true",
     
     "deploy": "eb use udagram-api&& eb deploy udagram-api",
-    "build": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json && zip -r www/Archive.zip www/Archive",
+    "build": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json && zip -r www/Archive.zip www/",
     
     "build00": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
 
