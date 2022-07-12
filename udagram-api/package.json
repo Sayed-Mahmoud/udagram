@@ -7,15 +7,17 @@
   },
   "main": "src/server.ts",
   "scripts": {
-    "start": "node ./server.js",
+    "start": "node server.js",
     "tsc": "npx tsc",
     "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     
     "deploy": "eb use udagram-api&& eb deploy udagram-api",
-    "build": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+    "build": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json && zip -r www/Archive.zip . && www/Archive",
     
+    "build00": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+
     "set:env" : "eb setenv POSTGRES_HOST=\"database-1.cbmigqbnjgzj.us-east-1.rds.amazonaws.com\" DB_PORT=\"5432\" POSTGRES_USERNAME=\"postgres\" POSTGRES_PASSWORD=\"321456Sa\" POSTGRES_DB=\"postgres\"",
 
     "deploy2": "npm run build && set AWS_ACCESS_KEY_ID=AKIAQCC6UJT73IL4ZRAB&& set AWS_SECRET_ACCESS_KEY=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&& echo \"before init\" && eb init udagram-api --region us-east-1 --platform node.js && echo \"after init\"&& cd www && zip -r Archive.zip . && cd ..&& echo \"before use\"&& eb use udagram-api&& eb deploy",
