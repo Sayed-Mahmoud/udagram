@@ -2,7 +2,7 @@ import { Sequelize } from "sequelize-typescript";
 import { config } from "./config/config";
 
 export const sequelize = new Sequelize(
-  "postgres://postgres:321456Sa@database-1.cbmigqbnjgzj.us-east-1.rds.amazonaws.com:5432/database-1"
+  "postgres://postgres:321456Sa@database-1.cbmigqbnjgzj.us-east-1.rds.amazonaws.com:5432/postgres"
 );
 /*
 export const sequelize = new Sequelize({
