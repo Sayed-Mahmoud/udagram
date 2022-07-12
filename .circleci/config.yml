@@ -40,6 +40,10 @@ jobs:
           command: |
             npm run frontend:deploy
       - run:
+          name: Setting Back-End/API env
+          command: |
+            npm run api:setenv
+      - run:
           name: Back-End/API deploy
           command: |
             npm run api:deploy
