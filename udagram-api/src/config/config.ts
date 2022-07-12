@@ -17,7 +17,7 @@ export const config = {
   AWS_PROFILE: 'default',
   POSTGRES_HOST: 'database-1.cbmigqbnjgzj.us-east-1.rds.amazonaws.com',
   DB_PORT: '5432',
-  port: Number(process.env.PORT),
+  port: 3000,
   host: 'database-1.cbmigqbnjgzj.us-east-1.rds.amazonaws.com',
   dialect: "postgres",
   aws_region: process.env.AWS_REGION,
