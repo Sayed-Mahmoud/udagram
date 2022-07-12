@@ -13,8 +13,8 @@
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     
-    "deploy": "eb use udagram-api&& eb deploy udagram-api",
-    "build": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json&& cp -rf node_modules www/node_modules&& cd www && zip -r Archive.zip . && cd ..",
+    "deploy": "npm run build &&eb use udagram-api&& eb deploy udagram-api",
+    "build": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json&& cp -rf node_modules www/node_modules&& cd www&& zip -r Archive.zip .&& cd ..",
     
     "build00": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     
