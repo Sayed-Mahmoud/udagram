@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 @Component({
   selector: 'app-root',
