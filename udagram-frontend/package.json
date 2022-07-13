@@ -11,7 +11,13 @@
     "test": "export NODE_OPTIONS=--openssl-legacy-provider && ng test --watch=false",
     "lint": "export NODE_OPTIONS=--openssl-legacy-provider && ng lint",
     "e2e": "npm run build && export NODE_OPTIONS=--openssl-legacy-provider && ng e2e",
-    "e2e2": "export NODE_OPTIONS=--openssl-legacy-provider && protractor e2e/protractor.conf.js"
+
+    "start2": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve",
+    "build2": "set NODE_OPTIONS=--openssl-legacy-provider && ng build",
+    "deploy2": "npm install -f && set NODE_OPTIONS=--openssl-legacy-provider && ng build &&chmod +x bin/deploy.sh && bin/deploy.sh",
+    "test2": "set NODE_OPTIONS=--openssl-legacy-provider && ng test --watch=false",
+    "lint2": "set NODE_OPTIONS=--openssl-legacy-provider && ng lint",
+    "e2e2": "npm run build2 && set NODE_OPTIONS=--openssl-legacy-provider && protractor e2e/protractor.conf.js"
   },
   "private": true,
   "dependencies": {
