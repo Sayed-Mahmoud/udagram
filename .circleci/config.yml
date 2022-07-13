@@ -45,10 +45,10 @@ jobs:
       #    name: Setting Back-End/API env
       #    command: |
       #      npm run api:setenv
-      - run:
-          name: Back-End/API deploy
-          command: |
-            npm run api:deploy
+      #- run:
+      #    name: Back-End/API deploy
+      #    command: |
+      #      npm run api:deploy
 workflows:
   udagram:
     jobs:
