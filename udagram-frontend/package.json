@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "export NODE_OPTIONS=--openssl-legacy-provider && ng serve",
     "build": "export NODE_OPTIONS=--openssl-legacy-provider && ng build",
-    "deploy": "export NODE_OPTIONS=--openssl-legacy-provider chmod +x bin/deploy.sh && bin/deploy.sh",
+    "deploy": "export NODE_OPTIONS=--openssl-legacy-provider && chmod +x bin/deploy.sh && bin/deploy.sh",
 
     "deploy0": "npm install -f && export NODE_OPTIONS=--openssl-legacy-provider && ng build &&chmod +x bin/deploy.sh && bin/deploy.sh",
 
