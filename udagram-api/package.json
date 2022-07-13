@@ -13,7 +13,7 @@
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "deploy": "eb use udagram-api&& eb deploy udagram-api",
-    "build": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json&& cd www&& zip -r Archive.zip .&& cd..",
+    "build": "npm install && npm run clean && tsc && cp -rf src/config www/config&& cp .npmrc www/.npmrc&& cp package.json www/package.json&& cd www&& zip -r Archive.zip .&& cd ..",
     
     "set:env" : "eb setenv POSTGRES_HOST=\"database-1.cbmigqbnjgzj.us-east-1.rds.amazonaws.com\" DB_PORT=\"5432\" POSTGRES_USERNAME=\"postgres\" POSTGRES_PASSWORD=\"321456Sa\" POSTGRES_DB=\"postgres\"",
 
