@@ -39,8 +39,8 @@ module.exports = function (config) {
     },
     captureTimeout: 90000,
     browserDisconnectTolerance: 5,
-    browserDisconnectTimeout : 30000,
-    browserNoActivityTimeout : 30000,
+    browserDisconnectTimeout : 90000,
+    browserNoActivityTimeout : 90000,
 
     logLevel: config.LOG_DEBUG,
     singleRun: false
