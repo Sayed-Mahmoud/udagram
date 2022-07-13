@@ -18,10 +18,10 @@ jobs:
           name: Install Back-End/API Dependencies
           command: |
             npm run api:install
-      - run:
-          name: Test Front-End
-          command: |
-            npm run frontend:test
+      #- run:
+      #    name: Test Front-End
+      #    command: |
+      #      npm run frontend:test
       - run:
           name: Build Front-End
           command: |
@@ -45,10 +45,10 @@ jobs:
       #    name: Setting Back-End/API env
       #    command: |
       #      npm run api:setenv
-      #- run:
-      #    name: Back-End/API deploy
-      #    command: |
-      #      npm run api:deploy
+      - run:
+          name: Back-End/API deploy
+          command: |
+            npm run api:deploy
 workflows:
   udagram:
     jobs:
