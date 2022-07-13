@@ -27,13 +27,24 @@ jobs:
           name: Build Back-End/API
           command: |
             npm run api:build
+  test:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - checkout
+      - run:
+          name: Test Front-End
+          command: |
+            npm run frontend:test
+      #- run:
+      #    name: Test Back-End/API
+      #    command: |
+      #      npm run api:test
   deploy:
     docker:
       - image: "cimg/base:stable"
     steps:
-      - node/install
       - eb/setup
-      - aws-cli/setup
       - checkout
       - run:
           name: Front-End deploy
@@ -51,4 +62,5 @@ workflows:
   udagram:
     jobs:
       - build
+      - test
       - deploy
