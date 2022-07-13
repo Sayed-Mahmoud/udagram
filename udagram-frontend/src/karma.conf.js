@@ -25,8 +25,123 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    //browsers: ['Chrome'],
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: [
+          '--headless',
+          '--no-sandbox',
+          '--disable-gpu'
+        ]
+      }
+    },
+    captureTimeout: 60000,
+    browserDisconnectTolerance: 5,
+    browserDisconnectTimeout : 30000,
+    browserNoActivityTimeout : 30000,
+
     logLevel: config.LOG_DEBUG,
     singleRun: false
   });
 };
+
+/*
+const process = require('process');
+//process.env.CHROME_BIN = require('puppeteer').executablePath();
+
+module.exports = function(config) {
+  config.set({
+
+    // base path that will be used to resolve all patterns (eg. files, exclude)
+    basePath: '',
+
+    // frameworks to use
+    frameworks: [ 'jasmine' ],
+
+    // list of files / patterns to load in the browser
+    files: [
+      'src/** /*.spec.js'
+    ],
+
+    // list of files / patterns to exclude
+    exclude: [],
+
+    // preprocess matching files before serving them to the browser
+    preprocessors: {
+      'src/** /*.spec.js': [ 'webpack' ]
+    },
+
+    webpack: {
+      // webpack configuration
+      mode: 'development',
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+            query: {
+              presets: ['env']
+            }
+          }
+        ]
+      },
+      stats: {
+        colors: true
+      }
+    },
+
+
+    // test results reporter to use
+    reporters: [ 'spec' ],
+
+    // web server port
+    port: 4200,
+
+    // enable / disable colors in the output (reporters and logs)
+    colors: true,
+
+    // level of logging
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    logLevel: config.LOG_INFO,
+
+    // enable / disable watching file and executing tests whenever any file changes
+    autoWatch: true,
+
+    // plugins for karma
+    plugins: [
+      'karma-chrome-launcher',
+      'karma-webpack',
+      'karma-jasmine',
+      'karma-spec-reporter'
+    ],
+
+    // start these browsers
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: [
+          '--headless',
+          '--no-sandbox',
+          '--disable-gpu'
+        ]
+      }
+    },
+    captureTimeout: 60000,
+    browserDisconnectTolerance: 5,
+    browserDisconnectTimeout : 30000,
+    browserNoActivityTimeout : 30000,
+
+    // Continuous Integration mode
+    // if true, Karma captures browsers, runs the tests and exits
+    singleRun: true,
+
+    // Concurrency level
+    // how many browser should be started simultaneous
+    concurrency: 1
+  })
+}
+*/
