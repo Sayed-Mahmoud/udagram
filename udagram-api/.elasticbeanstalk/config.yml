@@ -3,8 +3,8 @@ branch-defaults:
     environment: udagram-api
 environment-defaults:
   udagram-api:
-    branch: null
-    repository: null
+    branch: master
+    repository: udagram
 global:
   application_name: udagram-api
   default_ec2_keyname: null

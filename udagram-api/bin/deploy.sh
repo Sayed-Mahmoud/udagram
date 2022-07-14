@@ -1,1 +1,2 @@
-aws s3 cp --recursive --acl public-read ./www/ s3://elasticbeanstalk-us-east-1-004493430015/
+eb setenv AWS_ACCESS_KEY_ID=\"AKIAQCC6UJT73IL4ZRAB\" AWS_SECRET_ACCESS_KEY=\"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\" AWS_BUCKET=\"elasticbeanstalk-us-east-1-004493430015\" AWS_PROFILE=\"default\" AWS_REGION=\"us-east-1\" JWT_SECRET=\"mysecretstring\" PORT=\"3000\" POSTGRES_HOST=\"database-1.cbmigqbnjgzj.us-east-1.rds.amazonaws.com\" POSTGRES_USERNAME\"postgres\" POSTGRES_PASSWORD=\"321456Sa\" POSTGRES_DB=\"postgres\" POSTGRES_PORT=\"5432\" DB_PORT=\"5432\" POSTGRES_USERNAME=\"postgres\" POSTGRES_PASSWORD=\"321456Sa\" URL=\"http://tests.us-east-1.elasticbeanstalk.com\"
+eb use udagram-api && eb deploy udagram-api
